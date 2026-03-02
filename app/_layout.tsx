@@ -74,11 +74,7 @@ export default function RootLayout() {
 
           <TouchableOpacity style={styles.botao}>
             <Text>3</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botaoIgual}>
-            <Text>=</Text>
-          </TouchableOpacity>
+          </TouchableOpacity>          
         </View>
 
         <View style={styles.linhaBotoes}>
@@ -89,6 +85,10 @@ export default function RootLayout() {
           <TouchableOpacity style={styles.botao}>
             <Text>,</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoIgual}>
+            <Text>=</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -97,5 +97,69 @@ export default function RootLayout() {
 
 
 const styles = StyleSheet.create({
+  containerCalculadora: {
+    flex: 1,
+    backgroundColor: "#3f3f3f",
+    padding: 10
+  },
 
+  areaVisor: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    backgroundColor: "#fff",
+    margin: 10,
+    borderRadius: 10
+  },
+
+  areaBotoes: {
+    flex: 3,
+    justifyContent: "space-evenly",
+    padding: 10
+  },
+
+  linhaBotoes: {
+    flexDirection: "row",
+  },
+
+  botao: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#d3d3d3",
+    margin: 4,
+    height: 70,
+    borderRadius: 10,
+
+  },
+
+  botaoLimparTudo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#ffa500",
+    margin: 4,
+    height: 70,
+    borderRadius: 10,
+  },
+
+  botaoIgual: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#5daad3",
+    margin: 4,
+    height: 140,
+    borderRadius: 10,
+  },
+
+  botaoZero: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#d3d3d3",
+    margin: 4,
+    height: 70,
+    borderRadius: 10,
+  }, 
 })
