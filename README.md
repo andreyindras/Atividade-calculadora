@@ -1,50 +1,13 @@
-# Welcome to your Expo app 👋
+# Calculadora
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Protótipo
 
-## Get started
+<img width="200" height="400" alt="calculadora-prototipo" src="https://github.com/user-attachments/assets/c415ec41-2d70-4efb-89da-b3b4050b42c5" />
 
-1. Install dependencies
+## Requisitos
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- O usuario deve ter o opção de selecionar números de 0 a 9
+- O usuário deve ser capaz de realizar as operações de soma, subtração, multiplicação, divisão e potencialização
+- O usário deve ter a opção de realizar operações com virgula
+- O usuário deve possuir a opção de apagar toda a operação que selecionou
+- O usuário deve ser capaz de visualizar o resultado da sua operação em um visor
