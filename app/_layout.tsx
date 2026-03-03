@@ -77,7 +77,7 @@ export default function RootLayout() {
   return (
     <View style={styles.containerCalculadora}>
       <View style={styles.areaVisor}>
-        <Text>{mostraVisor}</Text>
+        <Text style={styles.textoVisor}>{mostraVisor}</Text>
       </View>
 
       <View style={styles.areaBotoes}>     
@@ -146,16 +146,16 @@ export default function RootLayout() {
 
           <TouchableOpacity style={styles.botao} onPress={() => receberNumero("3")}>
             <Text>3</Text>
-          </TouchableOpacity>          
+          </TouchableOpacity>  
+
+          <TouchableOpacity style={styles.botao} onPress={() => receberNumero(".")}>
+            <Text>.</Text>
+          </TouchableOpacity>        
         </View>
 
         <View style={styles.linhaBotoes}>
           <TouchableOpacity style={styles.botaoZero} onPress={() => receberNumero("0")}>
             <Text>0</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botao} onPress={() => receberNumero(".")}>
-            <Text>.</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoIgual} onPress={calcularResultado}>
@@ -177,11 +177,16 @@ const styles = StyleSheet.create({
 
   areaVisor: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "flex-end",
     backgroundColor: "#fff",
     margin: 10,
     borderRadius: 10
+  },
+
+  textoVisor: {
+    fontSize: 64,
+    textAlign: "right"
   },
 
   areaBotoes: {
@@ -191,7 +196,7 @@ const styles = StyleSheet.create({
   },
 
   linhaBotoes: {
-    flexDirection: "row",
+    flexDirection: "row"
   },
 
   botao: {
@@ -201,8 +206,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#d3d3d3",
     margin: 4,
     height: 70,
-    borderRadius: 10,
-
+    borderRadius: 10
   },
 
   botaoLimparVisor: {
@@ -212,7 +216,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffa500",
     margin: 4,
     height: 70,
-    borderRadius: 10,
+    borderRadius: 10
   },
 
   botaoIgual: {
@@ -221,8 +225,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: "#5daad3",
     margin: 4,
-    height: 140,
-    borderRadius: 10,
+    height: 70,
+    borderRadius: 10
   },
 
   botaoZero: {
@@ -232,6 +236,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#d3d3d3",
     margin: 4,
     height: 70,
-    borderRadius: 10,
+    borderRadius: 10
   }, 
 })
