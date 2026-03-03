@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import 'react-native-reanimated';
 
 export default function RootLayout() {
-  
+
   const [mostraVisor, setMostraVisor] = useState("0");
   const [guardarVisor, setGuardarVisor] = useState("");
   const [operador, setOperador] = useState("");
@@ -23,6 +23,14 @@ export default function RootLayout() {
   }
 
   function receberOperador(op) {
+    if (op === "√") {
+      setOperador(op);
+      setGuardarVisor(mostraVisor);
+      setMostraVisor("√" + mostraVisor);
+      setAguardaNovaEntrada(true);
+      return;
+    }
+
     setOperador(op);
     setGuardarVisor(mostraVisor);
     setAguardaNovaEntrada(true);
@@ -33,7 +41,7 @@ export default function RootLayout() {
     const num2 = parseFloat(mostraVisor);
     let resultado = 0;
 
-    switch(operador) {
+    switch (operador) {
       case "+":
         resultado = num1 + num2;
         break;
@@ -50,17 +58,18 @@ export default function RootLayout() {
           setOperador('');
           setAguardaNovaEntrada(true);
           return;
-        } 
+        }
 
         resultado = num1 / num2;
         break;
       case "√":
         resultado = Math.sqrt(num1);
-        break;  
+        break;
       default:
-        return;     
+        return;
     }
-    setMostraVisor(String(resultado));
+
+    setMostraVisor(String(parseFloat(resultado.toFixed(8))));
     setOperador('');
     setGuardarVisor('');
     setAguardaNovaEntrada(true);
@@ -72,7 +81,7 @@ export default function RootLayout() {
     setOperador('');
     setAguardaNovaEntrada(false);
   }
-  
+
 
   return (
     <View style={styles.containerCalculadora}>
@@ -80,7 +89,7 @@ export default function RootLayout() {
         <Text style={styles.textoVisor}>{mostraVisor}</Text>
       </View>
 
-      <View style={styles.areaBotoes}>     
+      <View style={styles.areaBotoes}>
         <View style={styles.linhaBotoes}>
           <TouchableOpacity style={styles.botaoLimparVisor} onPress={limparVisor}>
             <Text>AC</Text>
@@ -146,11 +155,11 @@ export default function RootLayout() {
 
           <TouchableOpacity style={styles.botao} onPress={() => receberNumero("3")}>
             <Text>3</Text>
-          </TouchableOpacity>  
+          </TouchableOpacity>
 
           <TouchableOpacity style={styles.botao} onPress={() => receberNumero(".")}>
             <Text>.</Text>
-          </TouchableOpacity>        
+          </TouchableOpacity>
         </View>
 
         <View style={styles.linhaBotoes}>
@@ -237,5 +246,5 @@ const styles = StyleSheet.create({
     margin: 4,
     height: 70,
     borderRadius: 10
-  }, 
+  },
 })
